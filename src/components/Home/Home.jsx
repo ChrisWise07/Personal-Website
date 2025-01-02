@@ -1,13 +1,13 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/main_photo.webp";
-import Stars from "../Particle";
+import homeLogo from "../../Assets/home_portrait_45.webp";
+import Particle from "../Particle";
 import Home2 from "./Home2";
 
 function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
-        <div id="tsparticles"></div>
+        <Particle />
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">

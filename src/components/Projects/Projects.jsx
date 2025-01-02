@@ -119,7 +119,6 @@ function Projects() {
             <ProjectCard
               imgPath={patch}
               imgWidth="90%"
-              // imgHeight="90%"
               title="Adversarial Patches to Camouflage Military Assets From CNNs"
               description="
                 Developed a unique method that produces imperceptible patches 

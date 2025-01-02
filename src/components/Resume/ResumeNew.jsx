@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
@@ -6,7 +6,13 @@ import pdf from "../../Assets/Chris_Wise_CV.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
+
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -24,7 +30,7 @@ function ResumeNew() {
             variant="primary"
             href="/assets/Chris_Wise_CV.pdf"
             target="_blank"
-            style={{ width: "175px" }}
+            style={{ width: "175px"}}
           >
             <AiOutlineDownload />
             &nbsp;Download CV

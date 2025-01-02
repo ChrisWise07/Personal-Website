@@ -1,5 +1,5 @@
 :root {
-  --black-value: 28;
+  --black-value: 25;
   --white-value: 225;
   --dark-background-value: 25;
   --light-background-value: 40;
@@ -88,11 +88,11 @@ button:focus {
 }
 
 .navbar {
-  position: fixed !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--custom-black) !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
+  padding: 1rem 2rem !important;
 }
 
 .navbar-toggler {
@@ -160,16 +160,15 @@ button:focus {
 }
 
 .navbar-brand {
-  color: rgb(250, 250, 250) !important;
+  margin-right: auto;
 }
 
 .logo {
-  height: 1.2em !important;
-  width: 2.4em !important;
+  width: 55px;
 }
 
 .navbar-nav .nav-link {
-  color: white !important;
+  color: var(--off-white) !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -184,9 +183,8 @@ button:focus {
   }
 }
 
-.navbar-nav .nav-item {
-  position: relative;
-  margin-left: 20px;
+.nav-item {
+  margin: 0 10px;
 }
 
 .navbar-nav .nav-item a {
@@ -218,18 +216,10 @@ button:focus {
 /* Home section */
 /* --------- */
 
-#tsparticles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
 .home-header {
   padding-top: 80px !important;
 }
-
-
 
 .home-section {
   position: relative;
@@ -244,7 +234,6 @@ button:focus {
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: whitesmoke;
   text-align: left;
   margin: 0 5vw;
 }
@@ -301,12 +290,10 @@ button:focus {
   color: var(--highlight-color) !important;
 }
 
-
-
 .home-about-section {
   position: relative;
   padding-bottom: 70px !important;
-  background-image: var(--section-background-color) !important;
+  background-image: var(--section-background-color);
 }
 
 .home-about-description {
@@ -512,7 +499,7 @@ button:focus {
 .about-img {
   position: relative;
   border-radius: 10px;
-  max-height: 550px;
+  max-height: 525px;
 }
 
 
@@ -632,16 +619,19 @@ button:focus {
 
 .fork-btn {
   font-size: 1.1em !important;
-  padding-top: 10px !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .fork-btn-inner {
   line-height: 1.4em !important;
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
-  padding: 0.25rem 1.1rem !important;
+  height: 40px !important;
   vertical-align: middle !important;
   text-align: center !important;
+  display: flex;
+  align-items: center;
 }
 
 .fork-btn-inner:hover {
