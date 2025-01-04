@@ -5,24 +5,30 @@
   --light-background-value: 40;
   --highlight-color: #4C9EA6;
   --secondary-color: #3F8388;
+  --warning_orange: rgb(255, 126, 40);
   --off-white: rgb(var(--white-value), var(--white-value), var(--white-value));
-  --light-background-colour: rgb(var(--light-background-value), var(--light-background-value), var(--light-background-value));
-  --dark-background-colour: rgb(var(--dark-background-value), var(--dark-background-value), var(--dark-background-value));
-  --custom-black: rgb(var(--black-value), var(--black-value), var(--black-value));
+
+  --light-background-colour: rgb(var(--light-background-value),
+      var(--light-background-value),
+      var(--light-background-value));
+
+  --dark-background-colour: rgb(var(--dark-background-value),
+      var(--dark-background-value),
+      var(--dark-background-value));
+
+  --custom-black: rgb(var(--black-value),
+      var(--black-value),
+      var(--black-value));
+
   --section-background-color: linear-gradient(to bottom right,
       var(--light-background-colour),
       var(--dark-background-colour));
-  --warning_orange: rgb(255, 126, 40);
 
-}
-
-html {
-  --section-background-color: linear-gradient(to bottom right, var(--light-background-colour), var(--dark-background-colour));
   --image-gradient: linear-gradient(to right,
       rgba(26, 26, 26, 0.55),
       rgba(26, 26, 26, 0.55));
-}
 
+}
 
 button:focus {
   box-shadow: none !important;
@@ -431,30 +437,7 @@ button:focus {
   background-image: var(--section-background-color) !important;
 }
 
-.tech-icons {
-  font-size: 4.5em !important;
-  /* margin: 15px !important; */
-  /* padding: 10px !important; */
-  align-items: center !important;
-  justify-content: center !important;
-  display: flex !important;
-  align-self: center !important;
-  align-content: center !important;
-  opacity: 0.93 !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 5px !important;
-  display: table !important;
-  overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
-}
 
-@media screen and (max-width: 768px) {
-  .tech-icons {
-    font-size: 13vw !important;
-  }
-
-}
 
 .quote-card-view {
   border: none !important;
@@ -466,7 +449,6 @@ button:focus {
 .about-activity {
   list-style: none !important;
   text-align: left !important;
-  padding-left: 1px !important;
 }
 
 .about-paragraph {
@@ -653,25 +635,16 @@ button:focus {
   margin-left: 5vw;
 }
 
-
-
-.tool-icons a {
-  color: var(--off-white);
-  /* Set the color to white */
-  font-size: 3.5em;
-  /*  Set the font size */
+.project-heading {
+  color: var(--off-white) !important;
+  font-size: 2.3em !important;
+  font-weight: 500 !important;
+  padding-top: 10px !important;
 }
 
-.tool-icons a:hover {
-  color: var(--off-white);
-}
-
-.tool-icons {
-  transition: transform 0.3s ease, color 0.3s ease;
-  /* Smooth transition for transform and color */
-}
-
-.tool-icons:hover {
-  transform: scale(1.1);
-  /* Scale the icons to 1.1 */
+@media screen and (max-width: 768px) {
+  .project-heading {
+    font-size: 2em !important;
+  }
+  
 }

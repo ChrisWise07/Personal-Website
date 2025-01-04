@@ -7,28 +7,28 @@ function SoftSkills() {
   return (
     <Row xs={4} sm={4} md={5} className="flip-card-row" style={{ paddingBottom: "50px" }}>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaFlag />} text="Leadership" textSize="35%" />
+        <FlipCard icon={<FaFlag />} text="Leadership" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaBrain />} text="Analytical Thinking" textSize="35%" />
+        <FlipCard icon={<FaBrain />} text="Analytical Thinking" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaTasks />} text="Management" textSize="35%" />
+        <FlipCard icon={<FaTasks />} text="Management" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaUsers />} text="Teamwork" textSize="35%" />
+        <FlipCard icon={<FaUsers />} text="Teamwork" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<GiWeightLiftingUp />} text="Discipline" textSize="35%" />
+        <FlipCard icon={<GiWeightLiftingUp />} text="Discipline" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaCompass />} text="Self-Direction" textSize="35%" />
+        <FlipCard icon={<FaCompass />} text="Self-Direction" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaLock />} text="Security Minded" textSize="35%" />
+        <FlipCard icon={<FaLock />} text="Security Minded" />
       </Col>
       <Col className="tech-icons d-flex justify-content-center align-items-center">
-        <FlipCard icon={<FaPuzzlePiece />} text="Problem-Solving" textSize="35%" />
+        <FlipCard icon={<FaPuzzlePiece />} text="Problem-Solving" />
       </Col>
     </Row>
   );

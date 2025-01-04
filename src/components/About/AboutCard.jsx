@@ -20,7 +20,7 @@ function AboutCard() {
             <br />
             My personal interests include
           </p>
-          <ul>
+          <ul style={{ paddingLeft: "0px" }}>
             <li className="about-activity">
               <GoArrowRight /> Mountaineering and Rock Climbing
             </li>

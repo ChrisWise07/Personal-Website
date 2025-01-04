@@ -8,7 +8,7 @@ function FlipCard({ icon, text, textSize }) {
                     {icon}
                 </div>
                 <div className="flip-card-back">
-                    <p style={{ fontSize: textSize }}>{text}</p>
+                    <p className="flip-card-text">{text}</p>
                 </div>
             </div>
         </div>

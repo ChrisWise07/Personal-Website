@@ -34,11 +34,6 @@
   transition: transform 0.75s;
 }
 
-.flip-card:hover .flip-card {
-  scale: 1.1;
-}
-
-
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -64,8 +59,133 @@
   padding-top: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .flip-card-back {
-    font-size: 11vw;
+.tech-icons {
+  font-size: 4.5em !important;
+  /* margin: 15px !important; */
+  /* padding: 10px !important; */
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-self: center !important;
+  align-content: center !important;
+  opacity: 0.93 !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  display: table !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease 0s !important;
+}
+
+.flip-card-text {
+  font-size: 30px;
+}
+
+.tool-icons a {
+  color: var(--off-white);
+  font-size: 3.5em;
+}
+
+.tool-icons a:hover {
+  color: var(--off-white);
+}
+
+.tool-icons {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tool-icons:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1200px) {
+  .flip-card {
+    width: 192px;
+    height: 120px;
   }
+  
+  .tech-icons {
+    font-size: 3.5em !important;
+  }
+
+  .flip-card-text {
+    font-size: 25px;
+  }
+  
+}
+
+@media screen and (max-width: 992px) {
+  .flip-card {
+    width: 144px;
+    height: 90px;
+  }
+  
+  .tech-icons {
+    font-size: 3.5em !important;
+  }
+
+  .flip-card-text {
+    font-size: 19px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .flip-card {
+    width: 135px;
+    height: 85px;
+  }
+
+  .tech-icons {
+    font-size: 3.5em !important;
+  }
+
+  .flip-card-text {
+    font-size: 17px;
+  }
+
+  .tool-icons a {
+    font-size: 3.0em;
+  }
+  
+}
+
+@media screen and (max-width: 576px) {
+  .flip-card {
+    width: 120px;
+    height: 75px;
+  }
+
+  .tech-icons {
+    font-size: 2.5em !important;
+  }
+
+  .flip-card-text {
+    font-size: 15px;
+  }
+
+  .tool-icons a {
+    font-size: 2.7em;
+  }
+  
+}
+
+@media screen and (max-width: 476px) {
+  .flip-card {
+    width: 108px;
+    height: 68px;
+  }
+
+  .tech-icons {
+    font-size: 1.0em;
+  }
+
+  .flip-card-text {
+    font-size: 11px;
+  }
+
+  .tool-icons a {
+    font-size: 2.7em;
+  }
+  
 }
