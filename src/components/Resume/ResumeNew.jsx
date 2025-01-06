@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
@@ -30,7 +30,7 @@ function ResumeNew() {
             variant="primary"
             href="/assets/Chris_Wise_CV.pdf"
             target="_blank"
-            style={{ width: "175px"}}
+            style={{ width: "175px" }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV

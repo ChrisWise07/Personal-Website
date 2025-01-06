@@ -28,6 +28,8 @@ function Home() {
                 alt="Profile Pic"
                 className="main-profile-img"
                 style={{ maxHeight: "450px" }}
+                width={450 / 1.6}
+                height="450"
               />
             </Col>
           </Row>

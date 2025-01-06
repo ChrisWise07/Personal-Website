@@ -221,21 +221,20 @@ button:focus {
 /* --------- */
 /* Home section */
 /* --------- */
-
-
-.home-header {
-  padding-top: 80px !important;
-}
-
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home_page_bg.jpg);
+  background-image: var(--image-gradient), url(./Assets/home_page_bg.webp);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 20px !important;
   padding-bottom: 30px !important;
+  font-family: "Raleway", serif !important;
+}
+
+.home-header {
+  padding-top: 80px !important;
 }
 
 .home-content {

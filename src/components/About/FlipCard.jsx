@@ -1,6 +1,6 @@
 import "./FlipCard.css"; // Import the CSS for the flip card
 
-function FlipCard({ icon, text, textSize }) {
+function FlipCard({ icon, text }) {
     return (
         <div className="flip-card">
             <div className="flip-card-inner">

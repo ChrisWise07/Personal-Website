@@ -4,7 +4,6 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import Particle from "../Particle";
 
 
 function Home2() {

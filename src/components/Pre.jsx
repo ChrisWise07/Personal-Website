@@ -1,13 +1,11 @@
-function Pre(props) {
-  return <div id={props.load ? "preloader" : "preloader-none"}></div>;
+import PropTypes from 'prop-types';
+
+function Pre({ load = true }) {
+  return <div id={load ? "preloader" : "preloader-none"}></div>;
 }
 
-Pre.defaultProps = {
-  load: true,
-};
-
 Pre.propTypes = {
-  load: Boolean,
+  load: PropTypes.bool,
 };
 
 export default Pre;
