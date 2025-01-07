@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
@@ -65,15 +66,15 @@ function ProjectCards(props) {
 }
 
 ProjectCards.propTypes = {
-  title: String,
-  description: String,
-  imgPath: String,
-  imgHeight: String,
-  imgWidth: String,
-  ghLink: String,
-  arxivLink: String,
-  pdfLink: String,
-  inProgress: Boolean
+  title: PropTypes.string,
+  description: PropTypes.string,
+  imgPath: PropTypes.string,
+  imgHeight: PropTypes.string,
+  imgWidth: PropTypes.string,
+  ghLink: PropTypes.string,
+  arxivLink: PropTypes.string,
+  pdfLink: PropTypes.string,
+  inProgress: PropTypes.bool
 };
 
 export default ProjectCards;

@@ -1,7 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home_portrait.webp";
-import Particle from "../Particle";
+import homeLogo from "../../assets/images/home_portrait.webp";
+import Particle from "../../components/Particle";
 import Home2 from "./Home2";
+import "./Home.css";
 
 function Home() {
   return (

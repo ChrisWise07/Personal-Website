@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: "Raleway", serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+    font-family: "Raleway", serif !important;
+}
+
+button:focus {
+    box-shadow: none !important;
+}
+
+.App {
+    text-align: center;
+}

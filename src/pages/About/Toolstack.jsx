@@ -9,7 +9,7 @@ import { VscVscode } from "react-icons/vsc";
 
 function Toolstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
+    <Row className="tool-icons-row">
       <Col xs={4} md={2} className="tool-icons">
         <a href="https://linuxmint.com" target="_blank" rel="noreferrer">
           <SiLinuxmint />

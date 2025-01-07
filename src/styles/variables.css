@@ -1,0 +1,40 @@
+:root {
+    --black-value: 25;
+    --white-value: 225;
+    --dark-background-value: 25;
+    --light-background-value: 40;
+    --highlight-color: #4C9EA6;
+    --secondary-color: #3F8388;
+    --warning_orange: rgb(255, 126, 40);
+
+    --off-white: rgb(var(--white-value),
+            var(--white-value),
+            var(--white-value));
+
+    --light-background-colour: rgb(var(--light-background-value),
+            var(--light-background-value),
+            var(--light-background-value));
+
+    --dark-background-colour: rgb(var(--dark-background-value),
+            var(--dark-background-value),
+            var(--dark-background-value));
+
+    --custom-black: rgb(var(--black-value),
+            var(--black-value),
+            var(--black-value));
+
+    --section-background-color: linear-gradient(to bottom right,
+            var(--light-background-colour),
+            var(--dark-background-colour));
+
+    --image-gradient: linear-gradient(to right,
+            rgba(var(--black-value),
+                var(--black-value),
+                var(--black-value),
+                0.55),
+            rgba(var(--black-value),
+                var(--black-value),
+                var(--black-value),
+                0.55));
+
+}

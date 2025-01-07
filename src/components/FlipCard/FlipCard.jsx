@@ -1,4 +1,5 @@
-import "./FlipCard.css"; // Import the CSS for the flip card
+import PropTypes from 'prop-types';
+import "./FlipCard.css";
 
 function FlipCard({ icon, text }) {
     return (
@@ -16,9 +17,9 @@ function FlipCard({ icon, text }) {
 }
 
 FlipCard.propTypes = {
-    icon: Object,
-    text: String,
-    textSize: String
+    icon: PropTypes.element.isRequired,
+    text: PropTypes.string.isRequired,
+    textSize: PropTypes.string
 };
 
 export default FlipCard;

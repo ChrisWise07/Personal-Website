@@ -1,12 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import perception from "../../Assets/Projects/collective_perception.webp";
-import patch from "../../Assets/Projects/robust_dpatch_imperceptible_patch_compare.webp";
-import QC_circuit_errors from "../../Assets/Projects/QC_circuit_errors.webp";
-import GreyBoxArch from "../../Assets/Projects/grey_box_arch.webp";
-import QuantumSpace from "../../Assets/Projects/quantum_space.webp";
-import TransformerQubitSimDiagram from "../../Assets/Projects/transformer_qubit_sim_diagram.webp";
+import Particle from "../../components/Particle";
+import perception from "../../assets/images/projectThumbnails/collective_perception.webp";
+import patch from "../../assets/images/projectThumbnails/robust_dpatch_imperceptible_patch_compare.webp";
+import QC_circuit_errors from "../../assets/images/projectThumbnails/QC_circuit_errors.webp";
+import GreyBoxArch from "../../assets/images/projectThumbnails/grey_box_arch.webp";
+import QuantumSpace from "../../assets/images/projectThumbnails/quantum_space.webp";
+import TransformerQubitSimDiagram from "../../assets/images/projectThumbnails/transformer_qubit_sim_diagram.webp";
 import "./Projects.css";
 
 function Projects() {
@@ -21,7 +21,7 @@ function Projects() {
           Here are some of my completed and current projects.
         </h5>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-        <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
               imgPath={TransformerQubitSimDiagram}
               imgWidth="92%"

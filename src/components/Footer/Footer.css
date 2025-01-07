@@ -1,0 +1,29 @@
+.footer {
+    background-color: var(--custom-black) !important;
+    bottom: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+}
+
+.footer-body {
+    z-index: 1;
+    text-align: center !important;
+    font-size: 1.35em !important;
+}
+
+.footer h3 {
+    font-size: 1em;
+    color: var(--off-white) !important;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-icons {
+        padding-left: 0 !important;
+    }
+    
+}
+
+
+
