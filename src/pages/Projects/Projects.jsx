@@ -44,9 +44,9 @@ function Projects() {
             <ProjectCard
               imgPath={QuantumSpace}
               imgWidth="70%"
-              title="Quantum Feature Space of Qubit in Arbitrary Bath"
+              title="Quantum Feature Space of a Qubit Coupled to an Arbitrary Bath"
               description="
-                  This work shows that the quantum noise operators may be 
+                  This work shows that quantum noise operators may be 
                   directly, accurately, and efficiently inferred using a 
                   regression-based approach compared to more expensive deep
                   learning approaches. This noise operator description admits an 
@@ -56,8 +56,9 @@ function Projects() {
                   to be effective at classifying and characterising the noise
                   processes describing qubit-bath interactions. 
               "
+              ghLink="https://github.com/ChrisWise07/quantum_feature_space"
+              arxivLink="https://arxiv.org/abs/2505.03397"
               pdfLink="/assets/Quantum_Feature_Space.pdf"
-              inProgress={true}
             />
           </Col>
           <Col md={4} className="project-card">
