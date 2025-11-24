@@ -20,6 +20,7 @@ a,
 span,
 div {
     font-family: "Raleway", serif !important;
+  scroll-behavior: smooth;
 }
 
 button:focus {

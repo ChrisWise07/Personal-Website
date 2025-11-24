@@ -26,11 +26,12 @@ function Home() {
             <Col md={5} className="home-img-div">
               <img
                 src={homeLogo}
-                alt="Profile Pic"
+                alt="Chris Wise - Computing and Cyber Professional"
                 className="main-profile-img"
                 style={{ maxHeight: "450px" }}
                 width={450 / 1.6}
                 height="450"
+                fetchpriority="high"
               />
             </Col>
           </Row>

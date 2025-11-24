@@ -19,6 +19,13 @@ function ResumeNew() {
 
   useEffect(() => {
     setWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -39,7 +46,7 @@ function ResumeNew() {
 
         <Row className="resume">
           <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.75} />
+            <Page pageNumber={1} width={width > 786 ? 786 : width * 0.9} />
           </Document>
         </Row>
       </Container>
