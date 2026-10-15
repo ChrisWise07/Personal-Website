@@ -1,0 +1,17 @@
+{
+  "name": "Chris Wise | Computing & Cyber Security Professional",
+  "short_name": "Chris Wise",
+  "description": "Portfolio and research of Chris Wise - Air Force Officer, UNSW University Medalist, Computing & Cyber Security researcher.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
