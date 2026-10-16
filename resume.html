@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris Wise — Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       RESET & BASE VARIABLES
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary: #0f172a;
+      /* Deep slate/navy */
+      --color-primary-light: #1e293b;
+      /* Slate 800 */
+      --color-accent: #059669;
+      /* Forest Emerald */
+      --color-accent-subtle: #ecfdf5;
+      /* Subtle emerald tint */
+      --color-text-main: #334155;
+      /* Slate 700 */
+      --color-text-muted: #64748b;
+      /* Slate 500 */
+      --color-border: #e2e8f0;
+      /* Slate 200 */
+      --color-border-dark: #cbd5e1;
+      /* Slate 300 */
+      --color-bg-subtle: #f8fafc;
+      /* Slate 50 */
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html,
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-main);
+      background-color: #0f172a;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Screen-only UI toolbar */
+    .screen-toolbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: #090d16;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .toolbar-title {
+      color: #f1f5f9;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #047857;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    /* Resume Document Wrapper (Screen Presentation) */
+    .resume-canvas {
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px 48px;
+      min-height: calc(100vh - 65px);
+    }
+
+    /* ==========================================================================
+       A4 PAGE CONTAINER
+       Strict dimensions: 210mm x 297mm
+       ========================================================================== */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      background: #ffffff;
+      padding: 11mm 13mm 10mm;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Links */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ==========================================================================
+       HEADER SECTION WITH LARGER PORTRAIT PHOTO
+       ========================================================================== */
+    .resume-header {
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: 12px;
+      margin-bottom: 13px;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-text-block {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .header-top-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-name {
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--color-primary);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .header-title-badge {
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      border: 1px solid rgba(5, 150, 105, 0.25);
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .header-contacts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 8.3pt;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .contacts-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+
+    .contact-item svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .contact-item a:hover {
+      color: var(--color-accent);
+    }
+
+    .header-photo-wrapper {
+      flex-shrink: 0;
+    }
+
+    .header-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 2.5px solid #ffffff;
+      box-shadow: 0 0 0 1.5px var(--color-border-dark), 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ==========================================================================
+       TWO-COLUMN LAYOUT
+       ========================================================================== */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 36.5% 63.5%;
+      gap: 18px;
+      flex: 1;
+    }
+
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--color-border);
+      padding-right: 17px;
+    }
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       SECTION HEADINGS
+       ========================================================================== */
+    .section-title {
+      font-size: 9.5pt;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 6.5px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--color-border-dark);
+      margin-bottom: 8px;
+    }
+
+    .section-title svg {
+      width: 12.5px;
+      height: 12.5px;
+      stroke: var(--color-accent);
+      stroke-width: 2.2;
+    }
+
+    /* ==========================================================================
+       LEFT COLUMN: CERTIFICATIONS
+       ========================================================================== */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 8.5px;
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.15s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .cert-badge-img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .cert-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .cert-name {
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.22;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+    }
+
+    .cert-name svg {
+      width: 9.5px;
+      height: 9.5px;
+      stroke: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+
+    .cert-card:hover .cert-name svg {
+      stroke: var(--color-accent);
+    }
+
+    .cert-sub {
+      font-size: 7.2pt;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-top: 1.5px;
+    }
+
+    .cert-detail {
+      font-size: 7.1pt;
+      color: var(--color-text-muted);
+      line-height: 1.26;
+    }
+
+    /* ==========================================================================
+       LEFT COLUMN: EDUCATION
+       ========================================================================== */
+    .edu-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+
+    .edu-degree {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.25;
+    }
+
+    .edu-inst {
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: var(--color-text-main);
+    }
+
+    .edu-date {
+      font-size: 7.5pt;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .edu-honours {
+      font-size: 7.7pt;
+      font-weight: 700;
+      color: var(--color-primary-light);
+      margin-top: 1px;
+    }
+
+    .edu-thesis {
+      font-size: 7.3pt;
+      color: var(--color-text-muted);
+      line-height: 1.38;
+      margin-top: 1.5px;
+    }
+
+    /* ==========================================================================
+       LEFT COLUMN: HONOURS & AWARDS
+       ========================================================================== */
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7.5px;
+    }
+
+    .award-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+
+    .award-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .award-name {
+      font-size: 8.3pt;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .award-year {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .award-org {
+      font-size: 7.4pt;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+
+    .award-desc {
+      font-size: 7.2pt;
+      color: var(--color-text-main);
+      line-height: 1.34;
+    }
+
+    /* ==========================================================================
+       LEFT COLUMN: TECHNICAL SKILLS
+       ========================================================================== */
+    .skills-block {
+      display: flex;
+      flex-direction: column;
+      gap: 5.5px;
+    }
+
+    .skill-cat {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+
+    .skill-label {
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-tag {
+      font-size: 7.2pt;
+      font-weight: 500;
+      color: var(--color-primary-light);
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      padding: 2.5px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       RIGHT COLUMN: PROFILE SUMMARY
+       ========================================================================== */
+    .profile-box {
+      background: var(--color-bg-subtle);
+      border-left: 3.5px solid var(--color-accent);
+      padding: 9px 12px;
+      border-radius: 0 5px 5px 0;
+      border-top: 1px solid var(--color-border);
+      border-right: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .profile-text {
+      font-size: 8.45pt;
+      line-height: 1.48;
+      color: var(--color-primary-light);
+      text-align: justify;
+    }
+
+    /* ==========================================================================
+       RIGHT COLUMN: PROFESSIONAL EXPERIENCE
+       ========================================================================== */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .exp-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .exp-role {
+      font-size: 9.4pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .exp-date {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--color-accent);
+      white-space: nowrap;
+    }
+
+    .exp-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.1pt;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      margin-bottom: 2.5px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3.2px;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 11px;
+      font-size: 8.25pt;
+      line-height: 1.4;
+      color: var(--color-text-main);
+    }
+
+    .exp-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 5.5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    /* ==========================================================================
+       RIGHT COLUMN: REFEREES SECTION
+       ========================================================================== */
+    .referees-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .referee-card {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+
+    .referee-name {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .referee-role {
+      font-size: 7.4pt;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-bottom: 2.5px;
+    }
+
+    .referee-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 7.3pt;
+      color: var(--color-text-main);
+    }
+
+    .ref-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4.5px;
+      color: var(--color-text-main);
+      transition: color 0.15s ease;
+    }
+
+    .ref-link svg {
+      width: 11px;
+      height: 11px;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .ref-link:hover {
+      color: var(--color-accent);
+    }
+
+    /* ==========================================================================
+       PRINT STYLES FOR PDF GENERATION
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .screen-toolbar {
+        display: none !important;
+      }
+
+      .resume-canvas {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+      }
+
+      .page {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 11mm 13mm 10mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      .cert-card {
+        border-color: #cbd5e1 !important;
+      }
+
+      .referee-card {
+        border-color: #cbd5e1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Screen-only action toolbar -->
+  <aside class="screen-toolbar" aria-label="Resume Actions">
+    <span class="toolbar-title">Chris Wise &mdash; Curriculum Vitae (A4 1-Page Format)</span>
+    <div class="toolbar-actions">
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save PDF
+      </button>
+      <a href="./assets/Chris_Wise_CV.pdf" download="Chris_Wise_CV.pdf" class="btn btn-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Pre-compiled PDF
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Website
+      </a>
+    </div>
+  </aside>
+
+  <!-- Resume Document Canvas -->
+  <main class="resume-canvas">
+    <article class="page">
+
+      <!-- ==================== HEADER ==================== -->
+      <header class="resume-header">
+        <div class="header-main">
+          <div class="header-text-block">
+            <div class="header-top-row">
+              <h1 class="header-name">Chris Wise</h1>
+              <span class="header-title-badge">Air Force Officer &bull; UNSW University Medallist</span>
+            </div>
+
+            <div class="header-contacts-grid">
+              <div class="contacts-row">
+                <span class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  Canberra, ACT, Australia
+                </span>
+                <span class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <a href="mailto:email@chriswise.tech">email@chriswise.tech</a>
+                </span>
+                <span class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                  <a href="https://chriswise.tech" target="_blank" rel="noopener noreferrer">chriswise.tech</a>
+                </span>
+              </div>
+              <div class="contacts-row">
+                <span class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <a href="https://www.linkedin.com/in/chris-a-wise" target="_blank"
+                    rel="noopener noreferrer">linkedin.com/in/chris-a-wise</a>
+                </span>
+                <span class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <a href="https://github.com/ChrisWise07" target="_blank"
+                    rel="noopener noreferrer">github.com/ChrisWise07</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-photo-wrapper">
+            <img src="./assets/images/profile_resume_square.png" alt="Chris Wise" class="header-photo">
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================== BODY (2 COLUMNS) ==================== -->
+      <div class="resume-body">
+
+        <!-- ==================== LEFT COLUMN ==================== -->
+        <section class="left-col" aria-label="Education, Certifications, and Skills">
+
+          <!-- Certifications -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              Certifications
+            </h2>
+            <div class="cert-list">
+              <!-- GCIH -->
+              <a href="https://www.credly.com/badges/a4794071-ed53-4865-9a1e-4b4813c808aa/public_url" target="_blank"
+                rel="noopener noreferrer" class="cert-card" title="Verify GCIH on Credly">
+                <img src="./assets/images/certs/gcih.png" alt="GIAC GCIH Badge" class="cert-badge-img">
+                <div class="cert-info">
+                  <div class="cert-name">
+                    <span>GIAC Incident Handler (GCIH)</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </div>
+                  <span class="cert-sub">GIAC Certifications &bull; 2026</span>
+                  <span class="cert-detail">MITRE ATT&amp;CK, live forensics</span>
+                </div>
+              </a>
+
+              <!-- GSEC -->
+              <a href="https://www.credly.com/badges/316245cf-37d9-4816-8fc2-db117c44f11e/public_url" target="_blank"
+                rel="noopener noreferrer" class="cert-card" title="Verify GSEC on Credly">
+                <img src="./assets/images/certs/gsec.png" alt="GIAC GSEC Badge" class="cert-badge-img">
+                <div class="cert-info">
+                  <div class="cert-name">
+                    <span>Security Essentials (GSEC)</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </div>
+                  <span class="cert-sub">GIAC Certifications &bull; 2026</span>
+                  <span class="cert-detail">Architecture, cryptography</span>
+                </div>
+              </a>
+
+              <!-- GIAC Board -->
+              <a href="https://www.credly.com/badges/15edcbb9-4fef-48bb-868f-bd2cd99865d9/public_url" target="_blank"
+                rel="noopener noreferrer" class="cert-card" title="Verify GIAC Advisory Board on Credly">
+                <img src="./assets/images/certs/giac_advisory_board.png" alt="GIAC Advisory Board Badge"
+                  class="cert-badge-img">
+                <div class="cert-info">
+                  <div class="cert-name">
+                    <span>GIAC Advisory Board</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </div>
+                  <span class="cert-sub">Invitation-Only Member &bull; 2026</span>
+                  <span class="cert-detail">Extended for exam scores &gt;85%</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              Education
+            </h2>
+            <div class="edu-item">
+              <h3 class="edu-degree">Bachelor of Computing &amp; Cyber Security (Honours)</h3>
+              <div class="edu-inst">University of New South Wales (UNSW Sydney)</div>
+              <div class="edu-date">2020 &ndash; 2023 &bull; Canberra, ACT</div>
+              <div class="edu-honours">First-Class Honours &bull; GPA: 6.8 / 7.0</div>
+              <p class="edu-thesis">
+                Honours Thesis: <em>"Machine Learning for High Fidelity Qubit Control"</em> (Supervised by Assoc. Prof.
+                Matt Woolley).
+              </p>
+            </div>
+          </div>
+
+          <!-- Honours & Awards -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              Honours &amp; Awards
+            </h2>
+            <div class="awards-list">
+              <div class="award-item">
+                <div class="award-top">
+                  <h3 class="award-name">University Medal</h3>
+                  <span class="award-year">2023</span>
+                </div>
+                <div class="award-org">UNSW</div>
+                <p class="award-desc">Awarded to the undergraduate student with the most outstanding academic
+                  performance in the graduating cohort.</p>
+              </div>
+
+              <div class="award-item">
+                <div class="award-top">
+                  <h3 class="award-name">Chief of Air Force Award</h3>
+                  <span class="award-year">2022</span>
+                </div>
+                <div class="award-org">Royal Australian Air Force</div>
+                <p class="award-desc">Highest third-year officer cadet award for academic and military achievement,
+                  leadership, and service ethos.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
+              Technical Proficiencies
+            </h2>
+            <div class="skills-block">
+              <div class="skill-cat">
+                <span class="skill-label">Languages</span>
+                <div class="skill-tags">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">C</span>
+                  <span class="skill-tag">C++</span>
+                  <span class="skill-tag">Bash</span>
+                  <span class="skill-tag">SQL</span>
+                </div>
+              </div>
+              <div class="skill-cat">
+                <span class="skill-label">AI &amp; Scientific Computing</span>
+                <div class="skill-tags">
+                  <span class="skill-tag">PyTorch</span>
+                  <span class="skill-tag">Qiskit</span>
+                  <span class="skill-tag">QuTiP</span>
+                  <span class="skill-tag">NumPy/SciPy</span>
+                </div>
+              </div>
+              <div class="skill-cat">
+                <span class="skill-label">Systems &amp; Cyber Operations</span>
+                <div class="skill-tags">
+                  <span class="skill-tag">Linux / Unix</span>
+                  <span class="skill-tag">Windows</span>
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">VMware</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ==================== RIGHT COLUMN ==================== -->
+        <section class="right-col" aria-label="Profile, Professional Experience, and Referees">
+
+          <!-- Profile Box -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Professional Profile
+            </h2>
+            <div class="profile-box">
+              <p class="profile-text">
+                Australian Air Force Officer and UNSW University Medallist (First-Class Honours) with a strong
+                foundation in computing, cyber security, and machine learning, researching the intersection of quantum
+                technologies, AI, and high-performance computing. Combines disciplined leadership and analytical
+                problem-solving to deliver high-fidelity technical solutions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Professional Experience -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              Professional Experience
+            </h2>
+            <div class="experience-list">
+
+              <!-- Role 1: RAAF -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h3 class="exp-role">Air Force Officer</h3>
+                  <span class="exp-date">2024 &ndash; Present</span>
+                </div>
+                <div class="exp-meta">
+                  <span>Royal Australian Air Force</span>
+                  <span>Canberra, ACT</span>
+                </div>
+                <ul class="exp-bullets">
+                  <li>Delivering briefings to commanders and decision-makers.
+                  </li>
+                  <li>Conducting risk assessments and risk communication.</li>
+                  <li>Analysing, managing, and interpreting reports.</li>
+                  </li>
+                  <li>Leading and managing personnel.</li>
+                  <li>Designed and built an isolated intranet integrating analogue-to-digital hardware and zero-client
+                    virtual machines for the Defence Science and Technology Group (DSTG).</li>
+                </ul>
+              </article>
+
+              <!-- Role 2: OIST -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h3 class="exp-role">Quantum Research Intern</h3>
+                  <span class="exp-date">Jan 2023 &ndash; Apr 2023</span>
+                </div>
+                <div class="exp-meta">
+                  <span>Okinawa Institute of Science &amp; Technology (OIST)</span>
+                  <span>Okinawa, Japan</span>
+                </div>
+                <ul class="exp-bullets">
+                  <li>Researched quantum decoherence and noise modelling within the Quantum Machines Unit.</li>
+                  <li>Applied machine learning to characterise and mitigate stochastic noise processes in physical
+                    qubits.</li>
+                  <li>Prepared and delivered technical research seminars on quantum control methods.</li>
+                </ul>
+              </article>
+
+              <!-- Role 3: ADFA -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h3 class="exp-role">Air Force Officer Cadet &amp; Support Officer</h3>
+                  <span class="exp-date">2020 &ndash; 2023</span>
+                </div>
+                <div class="exp-meta">
+                  <span>Australian Defence Force Academy (ADFA)</span>
+                  <span>Canberra, ACT</span>
+                </div>
+                <ul class="exp-bullets">
+                  <li>Completed military officer training concurrently with full-time academic studies in Computing and
+                    Cyber Security.</li>
+                  <li>Completed four self-directed research projects spanning machine learning, quantum computing, and
+                    autonomous systems.</li>
+                  <li>Served as Support Officer responsible for the administration, welfare, and mentoring of junior
+                    cadets.</li>
+                </ul>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Referees -->
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Referees
+            </h2>
+            <div class="referees-grid">
+              <div class="referee-card">
+                <h3 class="referee-name">Ramy Fathelbab</h3>
+                <div class="referee-role">Former Officer Commanding</div>
+                <div class="referee-contact">
+                  <a href="mailto:ramy.fathelbab@defence.gov.au" class="ref-link">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    ramy.fathelbab@defence.gov.au
+                  </a>
+                  <a href="tel:+61422622141" class="ref-link">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                    +61-422-622-141
+                  </a>
+                </div>
+              </div>
+
+              <div class="referee-card">
+                <h3 class="referee-name">Assoc. Prof. Matt Woolley</h3>
+                <div class="referee-role">Thesis Supervisor &amp; Senior Lecturer, UNSW</div>
+                <div class="referee-contact">
+                  <a href="mailto:m.woolley@unsw.edu.au" class="ref-link">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    m.woolley@unsw.edu.au
+                  </a>
+                  <a href="tel:+61251145223" class="ref-link">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                    +61-2-5114-5223
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+
+    </article>
+  </main>
+
+</body>
+
+</html>
